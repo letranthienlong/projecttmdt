@@ -1,0 +1,7 @@
+.filter-products button.selected {
+  background-color: #ccc;
+  /* Màu nền cho tag được chọn */
+  color: #fff;
+  /* Màu chữ cho tag được chọn */
+  /* Thêm các hiệu ứng CSS khác tùy ý */
+}
