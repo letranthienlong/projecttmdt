@@ -4,6 +4,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import '../assets/less/AllProducts.css';
 import DeleteProducts from "../components/DeleteProducts";
 import FilterProducts from "../components/FilterProducts";
+import { Link } from "react-router-dom";
 
 const AllProducts = () => {
     const [createProducts, setCreateProducts] = useState(getDataProduct().products);
@@ -90,16 +91,18 @@ const AllProducts = () => {
 
             <div className="row">
                 {filteredProducts.map((product) => (
-                    <div key={product.id} className="col-md-2">
-                        <div className="card mb-3">
-                            <img src={product.thumbnail} className="card-img-top" alt={product.title} />
-                            <div className="card-body">
-                                <h5 className="card-title">{product.title}</h5>
-                                <p className="card-text">{product.price.toLocaleString()} VNĐ</p>
-                                <DeleteProducts productId={product.id} onDelete={handleDelete} />
+                    <Link to={`/product/${product.id}`} className="col-md-2">
+                        <div key={product.id} >
+                            <div className="card mb-3">
+                                <img src={product.thumbnail} className="card-img-top" alt={product.title} />
+                                <div className="card-body">
+                                    <h5 className="card-title">{product.title}</h5>
+                                    <p className="card-text">{product.price.toLocaleString()} VNĐ</p>
+                                    <DeleteProducts productId={product.id} onDelete={handleDelete} />
+                                </div>
                             </div>
                         </div>
-                    </div>
+                    </Link>
                 ))}
             </div>
 
