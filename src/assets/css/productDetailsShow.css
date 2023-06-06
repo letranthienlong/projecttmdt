@@ -21,7 +21,7 @@
     border: #0bbf56 1px solid;
 }
 .title-info{
-    padding-right: 500px;
+    padding-right: 300px;
 }
 .title {
     background-color: rgb(6, 67, 19);
@@ -95,5 +95,5 @@
     top: 33px;
     right: 16px;
     gap: 10px;
-    background-color: #f0e9e9e8;
+    background-color:#fffefee8;
 }

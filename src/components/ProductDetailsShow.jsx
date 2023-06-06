@@ -3,19 +3,19 @@ import "@Assets/css/productDetailsShow.css";
 import { dataProduct } from '../api/datadraw';
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
-import {FaTruck} from 'react-icons/fa';
+import { FaTruck } from 'react-icons/fa';
 function ProductDetailsShow() {
     const [product, setProduct] = useState();
     const [varindex, setVarindex] = useState(0);
-    const [variantSelected,setVariantSelected] = useState(false);
+    const [variantSelected, setVariantSelected] = useState(false);
     const { id } = useParams();
-    const handleChangeVarIndex = (index,item) => {
+    const handleChangeVarIndex = (index, item) => {
         setVarindex(index)
         setVariantSelected(item)
     }
     useEffect(() => {
         console.log('variant:', variantSelected);
-    },[variantSelected])
+    }, [variantSelected])
     const findProduct = (id) => {
         const res = dataProduct.products.filter(i => i.id == id)
         console.log('res', res);
@@ -38,22 +38,22 @@ function ProductDetailsShow() {
                     }
                 </div>
                 <div className="smav">
-                    {product?.variants.map((item, index)=> (
+                    {product?.variants.map((item, index) => (
                         <div className={`smav-item ${item.id === variantSelected.id ? "active" : ""}`} >
-                            <img checked={item.id === variantSelected.id } onClick={() => handleChangeVarIndex(index,item)} src={item.urlSmall} alt="" />
+                            <img checked={item.id === variantSelected.id} onClick={() => handleChangeVarIndex(index, item)} src={item.urlSmall} alt="" />
                         </div>
                     ))}
                 </div>
             </div>
             <div className="title-info">
-            <FaTruck className='icon'/>
+                <FaTruck className='icon' />
                 <div className='title'> Miễn phí vận chuyển toàn quốc</div>
                 <div className='info'>
                     <div className='choice2'>Lựa chọn màu và xem địa chỉ còn hàng</div>
                     <div className='input'>
                         {product?.variants.map((item, index) => (
                             <div className={`select-label2 ${item.id === variantSelected.id ? "active" : ""}`}>
-                                <input checked={item.id === variantSelected.id } onClick={() => handleChangeVarIndex(index,item)} type='radio' name='c'></input>
+                                <input checked={item.id === variantSelected.id} onClick={() => handleChangeVarIndex(index, item)} type='radio' name='c'></input>
                                 {item.name}
                                 <p>{item.price}</p>
                             </div>
@@ -65,7 +65,7 @@ function ProductDetailsShow() {
                     <button className='btn-2'>Them Gio Hang</button>
                 </div>
                 <div className='price'>
-                {!product ?
+                    {!product ?
                         <h2>Not found product!</h2>
                         :
                         <p>{product?.price}</p>
