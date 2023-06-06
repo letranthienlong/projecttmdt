@@ -39,8 +39,10 @@ function ProductDetailsShow() {
                 </div>
                 <div className="smav">
                     {product?.variants.map((item, index) => (
-                        <div className={`smav-item ${item.id === variantSelected.id ? "active" : ""}`} >
-                            <img checked={item.id === variantSelected.id} onClick={() => handleChangeVarIndex(index, item)} src={item.urlSmall} alt="" />
+                        <div key={index}>
+                            <div className={`smav-item ${item.id === variantSelected.id ? "active" : ""}`} >
+                                <img checked={item.id === variantSelected.id} onClick={() => handleChangeVarIndex(index, item)} src={item.urlSmall} alt="" />
+                            </div>
                         </div>
                     ))}
                 </div>
@@ -52,10 +54,12 @@ function ProductDetailsShow() {
                     <div className='choice2'>Lựa chọn màu và xem địa chỉ còn hàng</div>
                     <div className='input'>
                         {product?.variants.map((item, index) => (
-                            <div className={`select-label2 ${item.id === variantSelected.id ? "active" : ""}`}>
-                                <input checked={item.id === variantSelected.id} onClick={() => handleChangeVarIndex(index, item)} type='radio' name='c'></input>
-                                {item.name}
-                                <p>{item.price}</p>
+                            <div key={index}>
+                                <div className={`select-label2 ${item.id === variantSelected.id ? "active" : ""}`}>
+                                    <input checked={item.id === variantSelected.id} onClick={() => handleChangeVarIndex(index, item)} type='radio' name='c'></input>
+                                    {item.name}
+                                    <p>{item.price}</p>
+                                </div>
                             </div>
                         ))}
                     </div>

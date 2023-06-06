@@ -11,6 +11,8 @@
     border-radius: 10px;
     width: 300px;
     box-shadow: rgba(0, 0, 0, 0.16) 0px 4px 6px;
+    gap: 10px;
+    justify-content: space-around;
 }
 .smav-item{
     cursor: pointer;

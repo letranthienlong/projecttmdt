@@ -91,12 +91,12 @@ const AllProducts = () => {
 
             <div className="row">
                 {filteredProducts.map((product) => (
-                    <Link to={`/product/${product.id}`} >
-                        <div key={product.id} className="col-md-2">
+                    <Link to={`/product/${product.id}`} className="col-md-2" >
+                        <div key={product.id} >
                             <div className="card mb-3">
                                 <img src={product.thumbnail} className="card-img-top" alt={product.title} />
                                 <div className="card-body">
-                                    <h5 className="card-title">{product.title}</h5>
+                                    <h5 className="card-title" >{product.title}</h5>
                                     <p className="card-text">{product.price.toLocaleString()} VNĐ</p>
                                     <DeleteProducts productId={product.id} onDelete={handleDelete} />
                                 </div>

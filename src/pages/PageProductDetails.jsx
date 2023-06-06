@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { dataProduct } from "../api/datadraw"
 import ProductDetailsShow from "../components/ProductDetailsShow"
-import '@Assets/css/pageproduct.css'
+import '../assets/css/pageproduct.css'
 // import "@Assets/css/productDetailsShow.css";
 export default function PageProductDetails() {
   const [product, setProduct] = useState();
@@ -21,12 +21,12 @@ export default function PageProductDetails() {
 console.log('product', product)
   return (
     <>
+      <h2>Details Product</h2>
       {!product ?
         <h2>Not found product!</h2>
         :
-        <h2 className="name-product">Name Product: <span>{product?.title}</span></h2>
+        <h2 className="name-product ">Name Product: <span>{product?.title}</span></h2>
       }
-      
       <ProductDetailsShow/>
     </>
   )
