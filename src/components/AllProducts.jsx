@@ -1,11 +1,14 @@
-import React, { useState } from 'react';
+import React, { useContext, useState } from 'react';
 import { getDataProduct } from '../api/dataDrawFilter';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import '../assets/less/AllProducts.css';
 import DeleteProducts from "../components/DeleteProducts";
 import FilterProducts from "../components/FilterProducts";
+import { AppContext } from 'context/AppContext';
+import { dataProduct } from 'api/datadraw';
 
 const AllProducts = () => {
+    const {addToCart} = useContext(AppContext);
     const [createProducts, setCreateProducts] = useState(getDataProduct().products);
     const [isPopupOpen, setIsPopupOpen] = useState(false);
     const [newProductData, setNewProductData] = useState({
@@ -78,6 +81,8 @@ const AllProducts = () => {
         }
     });
 
+    
+
 
 
     return (
@@ -96,6 +101,7 @@ const AllProducts = () => {
                             <div className="card-body">
                                 <h5 className="card-title">{product.title}</h5>
                                 <p className="card-text">{product.price.toLocaleString()} VNĐ</p>
+                                <button className='add-to-cart-bttn' onClick={() => addToCart(product.id)}>Add To Cart</button>
                                 <DeleteProducts productId={product.id} onDelete={handleDelete} />
                             </div>
                         </div>
