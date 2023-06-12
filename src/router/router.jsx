@@ -6,7 +6,7 @@ import PageProductDetails from '@Pages/PageProductDetails';
 import PageSignUp from '@Pages/PageSignUp';
 import PageSignIn from '@Pages/PageSignIn';
 import PageDemo from 'pages/PageDemo';
-import PageCart from 'pages/PageCart';
+import PageCart from 'pages/Cart/PageCart';
 
 export const routes = [
   { title: 'Home', path: '/', component: PageHome, isShowMenu: true },
