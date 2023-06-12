@@ -3,7 +3,7 @@ import ProductsItem from "@Components/ProductsItem";
 import "@Assets/less/products.less";
 import "@Assets/less/productsItem.less";
 import Search from "./Search";
-import AppContext from "@/context/AppContext";
+import { AppContext  } from "context/AppContext";
 
 function Products({ title, children }) {
   const {theme,setTheme} = useContext(AppContext)

@@ -96,6 +96,9 @@ export default function MenuHeader() {
               <button className="button-login" id='form-open'>Đăng Nhập</button>
             </Link>
           )}
+          <Link className="cart-icon" to={'/cart'}>
+            <img src="https://www.svgrepo.com/show/80543/shopping-cart-outline.svg" />
+          </Link>
         </nav>
       </header>
     </>

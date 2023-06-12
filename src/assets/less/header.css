@@ -60,3 +60,7 @@ header .nav_item {
   align-items: center;
   justify-content: space-between;
 }
+.cart-icon {
+  size: 20px;
+  width: 30px;
+}
