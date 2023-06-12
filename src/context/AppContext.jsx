@@ -1,7 +1,7 @@
 import { createContext, useState } from "react";
 import { getDataProduct } from "api/dataDrawFilter";
 
-export const AppContext = createContext({})
+export const AppContext = createContext ({})
 
 export const getDefaultCart = () => {
    let cart = {};
